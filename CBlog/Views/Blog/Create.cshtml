@@ -1,0 +1,33 @@
+﻿@model Blog
+@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="container">
+	<form method="POST" asp-controller="Blog" asp-action="Create">
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div class="mb-3">
+			<label class="form-label">Blog Title</label>
+			<input type="text" class="form-control" placeholder="Enter Blog Title" asp-for="Title">
+			<span asp-validation-for="Title" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Short Description</label>
+			<textarea class="form-control" rows="3" asp-for="Description"></textarea>
+			<span asp-validation-for="Description" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Content</label>
+			<textarea class="form-control" rows="6" asp-for="Content"></textarea>
+			<span asp-validation-for="Content" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Image</label>
+			<input type="file" class="form-control">
+		</div>
+		<div class="mb-3">
+			<button class="btn btn-mainColor">Submit</button>
+			<a asp-controller="Blog" asp-action="Index">Back to my blogs</a>
+		</div>
+	</form>
+</div>
