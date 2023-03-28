@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CBlog.Models
 {
     public class Blog
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -14,13 +16,12 @@ namespace CBlog.Models
 
         [Required]
         public string Content { get; set; }
-
-        public string Image { get; set; } = "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg";
-
+        public string? Image { get; set; }
         public DateTime CreatedDate { get; set; }
-        public int UserId { get; set; }
-		public ApplicationUser User { get; set; }
-		public IEnumerable<Comment> Comments { get; set; }
-		public IEnumerable<React> Reacts { get; set; }
+        public string? ApplicationUserId { get; set; }
+        [ForeignKey("ApplicationUserId")]
+		public ApplicationUser? ApplicationUser { get; set; }
+		public IEnumerable<Comment>? Comments { get; set; }
+		public IEnumerable<React>? Reacts { get; set; }
 	}
 }

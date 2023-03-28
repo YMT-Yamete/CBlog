@@ -1,6 +1,8 @@
 ﻿using CBlog.Data;
 using CBlog.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using System.Security.Principal;
 
 namespace CBlog.Controllers
 {
@@ -16,7 +18,8 @@ namespace CBlog.Controllers
         [HttpGet]
 		public IActionResult Index()
 		{
-			return View();
+			IEnumerable<Blog> Blogs = context.Blog.ToList();
+			return View(Blogs);
 		}
 
 		[HttpGet]
@@ -33,6 +36,7 @@ namespace CBlog.Controllers
             {
 				return View();
             }
+			model.ApplicationUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 			model.CreatedDate = DateTime.Now;
 			context.Blog.Add(model);
 			context.SaveChanges();
