@@ -42,7 +42,13 @@ body {
 
 .blogImg {
     width: 100%;
-    height: 100%;
+    height: 20em;
+    object-fit: cover;
+}
+
+.blogDetailImg {
+    width: 100%;
+    height: 30em;
     object-fit: cover;
 }
 

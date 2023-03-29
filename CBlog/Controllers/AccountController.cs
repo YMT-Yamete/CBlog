@@ -33,6 +33,12 @@ namespace CBlog.Controllers
             else
             {
                 var user = await userManager.FindByEmailAsync(model.Email);
+                if(user == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    return View(model);
+                }
+
                 var result = await signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {

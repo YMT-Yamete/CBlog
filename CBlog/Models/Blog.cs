@@ -16,6 +16,7 @@ namespace CBlog.Models
 
         [Required]
         public string Content { get; set; }
+        
         public string? Image { get; set; }
         public DateTime CreatedDate { get; set; }
         public string? ApplicationUserId { get; set; }

@@ -4,7 +4,7 @@
 *@
 
 <div class="container">
-	<form method="POST" asp-controller="Blog" asp-action="Create">
+	<form method="POST" asp-controller="Blog" asp-action="Create" enctype="multipart/form-data">
 		<div asp-validation-summary="All" class="text-danger"></div>
 		<div class="mb-3">
 			<label class="form-label">Blog Title</label>
@@ -23,7 +23,8 @@
 		</div>
 		<div class="mb-3">
 			<label class="form-label">Image</label>
-			<input type="file" class="form-control">
+			<input type="file" class="form-control" asp-for="Image" name="image">
+			<span asp-validation-for="Image" class="text-danger"></span>
 		</div>
 		<div class="mb-3">
 			<button class="btn btn-mainColor">Submit</button>
