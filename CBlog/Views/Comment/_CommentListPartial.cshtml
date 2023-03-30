@@ -1,0 +1,27 @@
+﻿@using CBlog.ViewModels
+@model BlogDetailViewModel
+@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h4 class="mb-4"><u>@Model.Comments!.Count() Comments</u></h4>
+@if (@Model.Comments!.Count() > 0)
+{
+	@foreach (var comment in @Model.Comments!)
+	{
+		<div>
+			<h5>@comment.ApplicationUser.UserName</h5>
+			<p>@comment.Content</p>
+			<hr />
+		</div>
+	}
+}
+else
+{
+	<div>
+		<p class="text-center">No comments</p>
+		<hr />
+	</div>
+}

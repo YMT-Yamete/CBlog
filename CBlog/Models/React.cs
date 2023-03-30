@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using CBlog.Data.Enum;
 
 namespace CBlog.Models
 {
     public class React
     {
+        [Key]
         public int Id { get; set; }
         public ReactType GivenReact { get; set; }
         public string? ApplicationUserId { get; set; }

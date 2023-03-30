@@ -5,15 +5,15 @@
 @{
 }
 
-<div class="mt-5">
+<div class="mt-5" id="blog-grid-nav-links">
 	<ul class="nav nav-tabs">
 		<li class="nav-item">
-			<a class="nav-link refresh-partial-view @(ViewContext.RouteData.Values["Action"].ToString()=="Index" ? "active": "pinkText")" asp-controller="Home" asp-action="Index">All Blogs</a>
+			<a href="" class="nav-link @(ViewData["BlogGridPartial"] == "All Blogs" ? "active": "pinkText")" data-action-url="@Url.Action("ReturnAllBlogsInPartial", "Home")">All Blogs</a>
 		</li>
 		@if (User.Identity.IsAuthenticated)
 		{
 			<li class="nav-item">
-				<a class="nav-link refresh-partial-view @(ViewContext.RouteData.Values["Action"].ToString()=="My_Blogs" ? "active": "pinkText")" asp-controller="Home" asp-action="My_Blogs">My Blogs</a>
+				<a href="" class="nav-link @(ViewData["BlogGridPartial"] == "My Blogs" ? "active": "pinkText")" data-action-url="@Url.Action("ReturnMyBlogsInPartial", "Home")">My Blogs</a>
 			</li>
 		}
 	</ul>

@@ -1,5 +1,6 @@
 ﻿using CBlog.Data;
 using CBlog.Models;
+using CBlog.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -57,8 +58,26 @@ namespace CBlog.Controllers
 		[HttpGet]
 		public IActionResult Detail(int Id)
 		{
-			Blog blog = context.Blog.Include(b => b.ApplicationUser).FirstOrDefault(b => b.Id == Id);
-			return View(blog);
+			Blog? blog = context.Blog
+				.Include(b => b.ApplicationUser)
+				.Include(b => b.Comments)!
+				.ThenInclude(c => c.ApplicationUser)
+				.Include(b => b.Reacts)
+				.FirstOrDefault(b => b.Id == Id);
+			BlogDetailViewModel blogDetail = new BlogDetailViewModel
+			{
+				BlogId = blog!.Id,
+				Title = blog.Title,
+				Description = blog.Description,
+				Content = blog.Content,
+				Image = blog.Image,
+				CreatedDate = blog.CreatedDate,
+				ApplicationUserId = blog.ApplicationUserId,
+				ApplicationUser = blog.ApplicationUser,
+				Comments = blog.Comments,
+				Reacts = blog.Reacts,
+			};
+			return View(blogDetail);
 		}
 
 		[HttpPost]

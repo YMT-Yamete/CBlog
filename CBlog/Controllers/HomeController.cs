@@ -20,15 +20,24 @@ namespace CBlog.Controllers
         public IActionResult Index()
         {
             IEnumerable<Blog> Blogs = context.Blog.ToList();
+            ViewData["BlogGridPartial"] = "All Blogs";
             return View(Blogs);
         }
 
-        public IActionResult My_Blogs()
+        public IActionResult ReturnAllBlogsInPartial()
+        {
+            IEnumerable<Blog> Blogs = context.Blog.ToList();
+            ViewData["BlogGridPartial"] = "All Blogs";
+            return PartialView("_BlogGridPartial", Blogs);
+        }
+
+        public IActionResult ReturnMyBlogsInPartial()
         {
             IEnumerable<Blog> Blogs = context.Blog
                 .Where(b => b.ApplicationUserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
                 .ToList();
-            return View(Blogs);
+            ViewData["BlogGridPartial"] = "My Blogs";
+            return PartialView("_BlogGridPartial", Blogs);
         }
 
         public IActionResult About()

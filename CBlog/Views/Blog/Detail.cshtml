@@ -1,14 +1,71 @@
-﻿@model Blog
+﻿@using CBlog.Data.Enum
+@using CBlog.ViewModels
+@model BlogDetailViewModel
 @*
 	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
 
-<div role="main" class="container">
+<div class="container-fluid px-5">
+	<input id="BlogId" type="hidden" class="form-control" asp-for="BlogId">
 	<a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Back</a>
 	<h1 class="my-3">@Model.Title</h1>
 	<img class="blogDetailImg my-3" src="~/imgs/@Model.Image">
-	<p class="pinkText">Author : @Model.ApplicationUser.UserName | Date : @Model.CreatedDate</p>
+	<p class="pinkText">Author : @Model.ApplicationUser!.UserName | Date : @Model.CreatedDate</p>
 	<p>@Model.Content</p>
+	<div id="react-partial">
+		<partial name="~/Views/React/_ReactPartial.cshtml" model=@Model></partial>
+	</div>
+	<div class="my-2 add-comment-div">
+		<div class="input-group mb-3">
+			<input id="Comment" type="text" class="form-control" placeholder="Please write comment" required>
+			<button id="comment-button" class="btn btn-outline-secondary" data-action-url="@Url.Action("ReturnCommentListPartial", "Comment")">Submit</button>
+		</div>
+	</div>
+	<div>
+		<div id="comment-list-partial">
+			<partial name="~/Views/Comment/_CommentListPartial.cshtml" model="@Model"></partial>
+		</div>
+	</div>
 </div>
+
+
+@section Scripts {
+<script>
+		$(document).on('click', '#comment-button', function(e) {
+		e.preventDefault();
+		var BlogId = $('#BlogId').val();
+		var Comment = $('#Comment').val();
+		var url = $(this).data('action-url') + "?BlogId=" + BlogId + "&" + "Comment=" + Comment;
+		$.ajax({
+			url: url,
+			type: 'GET',
+			success: function(data) {
+				$('#comment-list-partial').html(data);
+				$('#Comment').val('');
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		});
+	});
+
+	$(document).on('click', '#react-partial button', function(e) {
+		e.preventDefault();
+		var BlogId = $('#BlogId').val();
+		var React = $(this).data('react');
+		var url = $(this).data('action-url') + "?BlogId=" + BlogId + "&" + "React=" + React;
+		$.ajax({
+			url: url,
+			type: 'GET',
+			success: function(data) {
+				$('#react-partial').html(data);
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		})
+	})
+</script>
+}

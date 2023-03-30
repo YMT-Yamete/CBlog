@@ -35,6 +35,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/YMT/Dotnet/CBlog/CBlog/Views/Comment/_CommentListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxfQ29tbWVudExpc3RQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/YMT/Dotnet/CBlog/CBlog/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -43,16 +47,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/YMT/Dotnet/CBlog/CBlog/Views/Home/My_Blogs.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeV9CbG9ncy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/YMT/Dotnet/CBlog/CBlog/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/YMT/Dotnet/CBlog/CBlog/Views/Home/_BlogGridPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQmxvZ0dyaWRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/YMT/Dotnet/CBlog/CBlog/Views/React/_ReactPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhY3RcX1JlYWN0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/YMT/Dotnet/CBlog/CBlog/Views/Shared/Error.cshtml]
