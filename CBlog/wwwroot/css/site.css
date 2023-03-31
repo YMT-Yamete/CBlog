@@ -1,20 +1,20 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .blogPostsHeader {
@@ -66,8 +66,8 @@ body {
 }
 
 .instagramButton {
-   background-color: #F44747;
-   color: white;
+    background-color: #F44747;
+    color: white;
 }
 
 .facebookButton {
@@ -81,8 +81,8 @@ body {
 }
 
 .reactIcon {
-   font-size: 25px;
-   color: grey;
+    font-size: 25px;
+    color: grey;
 }
 
 .reactCount {
@@ -96,6 +96,12 @@ body {
     border-color: deeppink !important;
 }
 
-.reacted{
+.reacted {
     color: deeppink;
+}
+
+.blogTitle {
+    line-height: 1.5em;
+    height: 1.5em; /* height is 2x line-height, so two lines will display */
+    overflow: hidden;
 }

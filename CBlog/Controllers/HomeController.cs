@@ -3,6 +3,7 @@ using System.Security.Claims;
 using CBlog.Data;
 using CBlog.Models;
 using Microsoft.AspNetCore.Mvc;
+using X.PagedList;
 
 namespace CBlog.Controllers
 {
@@ -17,25 +18,41 @@ namespace CBlog.Controllers
             this.context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? page = 1)
         {
-            IEnumerable<Blog> Blogs = context.Blog.ToList();
+            if (page != null && page < 1)
+            {
+                page = 1;
+            }
+
+            var pageSize = 6;
+            IPagedList<Blog> Blogs = context.Blog.ToList().ToPagedList(page ?? 1, pageSize);
             ViewData["BlogGridPartial"] = "All Blogs";
             return View(Blogs);
         }
 
-        public IActionResult ReturnAllBlogsInPartial()
+        public IActionResult ReturnAllBlogsInPartial(int? page = 1)
         {
-            IEnumerable<Blog> Blogs = context.Blog.ToList();
+            if (page != null && page < 1)
+            {
+                page = 1;
+            }
+            var pageSize = 6;
+            IPagedList<Blog> Blogs = context.Blog.ToList().ToPagedList(page ?? 1, pageSize);
             ViewData["BlogGridPartial"] = "All Blogs";
             return PartialView("_BlogGridPartial", Blogs);
         }
 
-        public IActionResult ReturnMyBlogsInPartial()
+        public IActionResult ReturnMyBlogsInPartial(int? page = 1)
         {
-            IEnumerable<Blog> Blogs = context.Blog
+            if (page != null && page < 1)
+            {
+                page = 1;
+            }
+            var pageSize = 6;
+            IPagedList<Blog> Blogs = context.Blog
                 .Where(b => b.ApplicationUserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
-                .ToList();
+                .ToList().ToPagedList(page ?? 1, pageSize);
             ViewData["BlogGridPartial"] = "My Blogs";
             return PartialView("_BlogGridPartial", Blogs);
         }
