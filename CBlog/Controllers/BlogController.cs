@@ -80,6 +80,21 @@ namespace CBlog.Controllers
 			return View(blogDetail);
 		}
 
+		[HttpGet]
+		public IActionResult Edit(int BlogId)
+		{
+			Blog model = context.Blog.FirstOrDefault(Blog => Blog.Id == BlogId);	
+			return View(model);
+		}
+
+		[HttpPost]
+		public IActionResult Edit(Blog model)
+		{
+			context.Blog.Update(model);
+			context.SaveChanges();
+            return RedirectToAction("Index", "Blog");
+        }
+
 		[HttpPost]
 		public IActionResult Delete(int BlogId)
         {

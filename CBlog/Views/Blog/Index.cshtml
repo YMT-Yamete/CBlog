@@ -39,7 +39,7 @@
 					<td>@blog.Content</td>
 					<td>@blog.CreatedDate</td>
 					<td>
-						<a class="btn btn-warning btn-sm">Edit</a>
+						<a class="btn btn-warning btn-sm" asp-controller="Blog" asp-action="Edit" asp-route-BlogId="@blog.Id">Edit</a>
 					</td>
 					<td>
 						<form method="POST" asp-controller="Blog" asp-action="Delete" asp-route-BlogId="@blog.Id">

@@ -23,7 +23,6 @@ D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\CBlog.dll
 D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\CBlog.pdb
 D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\CBlog.genruntimeconfig.cache
 D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\ref\CBlog.dll
-D:\YMT\Dotnet\CBlog\CBlog\bin\Debug\net6.0\ref\CBlog.dll
 D:\YMT\Dotnet\CBlog\CBlog\bin\Debug\net6.0\Humanizer.dll
 D:\YMT\Dotnet\CBlog\CBlog\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\YMT\Dotnet\CBlog\CBlog\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -70,3 +69,9 @@ D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\CBlog.MvcApplicationPartsAssemblyInfo
 D:\YMT\Dotnet\CBlog\CBlog\bin\Debug\net6.0\JetBrains.Annotations.dll
 D:\YMT\Dotnet\CBlog\CBlog\bin\Debug\net6.0\X.PagedList.dll
 D:\YMT\Dotnet\CBlog\CBlog\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\staticwebassets\msbuild.CBlog.Microsoft.AspNetCore.StaticWebAssets.props
+D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\staticwebassets\msbuild.build.CBlog.props
+D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CBlog.props
+D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CBlog.props
+D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\staticwebassets.pack.json
+D:\YMT\Dotnet\CBlog\CBlog\obj\Debug\net6.0\refint\CBlog.dll

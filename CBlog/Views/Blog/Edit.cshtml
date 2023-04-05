@@ -4,8 +4,12 @@
 *@
 
 <div class="container">
-	<form method="POST" asp-controller="Blog" asp-action="Create" enctype="multipart/form-data">
+	<form method="POST" asp-controller="Blog" asp-action="Edit" enctype="multipart/form-data">
 		<div asp-validation-summary="All" class="text-danger"></div>
+		<input type="text" class="form-control" asp-for="Id" hidden>
+		<input type="text" class="form-control" asp-for="ApplicationUserId" hidden>
+		<input type="text" class="form-control" asp-for="CreatedDate" hidden>
+		<input type="text" class="form-control" asp-for="Image" hidden>
 		<div class="mb-3">
 			<label class="form-label">Blog Title</label>
 			<input type="text" class="form-control" placeholder="Enter Blog Title" asp-for="Title">
@@ -20,12 +24,6 @@
 			<label class="form-label">Content</label>
 			<textarea class="form-control" rows="6" asp-for="Content"></textarea>
 			<span asp-validation-for="Content" class="text-danger"></span>
-		</div>
-		<div class="mb-3">
-			<label class="form-label">Image</label>
-			<input type="file" class="form-control" asp-for="Image" name="image">
-			<span class="text-warning">You can't edit the image once u post the blog.</span>
-			<span asp-validation-for="Image" class="text-danger"></span>
 		</div>
 		<div class="mb-3">
 			<button class="btn btn-mainColor">Submit</button>

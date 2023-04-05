@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Un37QpUM0lWsxNmHazBLzbi2neEpNFhw8+vUemAidww=",
+  "Hash": "/PjOj/NfIGjwKOtmmUs+fetrHEgMvvwG7P4OPkQAQP8=",
   "Source": "CBlog",
   "BasePath": "_content/CBlog",
   "Mode": "Default",
@@ -253,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgs\\3-30-2023day.png"
+    },
+    {
+      "Identity": "D:\\YMT\\Dotnet\\CBlog\\CBlog\\wwwroot\\imgs\\4-5-2023Koala.jpg",
+      "SourceId": "CBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\YMT\\Dotnet\\CBlog\\CBlog\\wwwroot\\",
+      "BasePath": "_content/CBlog",
+      "RelativePath": "imgs/4-5-2023Koala.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\4-5-2023Koala.jpg"
     },
     {
       "Identity": "D:\\YMT\\Dotnet\\CBlog\\CBlog\\wwwroot\\js\\site.js",
